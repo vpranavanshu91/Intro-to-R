@@ -8,7 +8,6 @@ class(tomato$Tomato)
 
 #sep="\t"
 #sep=";"
-\
 
 
 
