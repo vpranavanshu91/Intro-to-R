@@ -1,5 +1,6 @@
 c<-matrix(data = 1:25,nrow = 5)
 d<-matrix(data = 1:5,ncol = 5)
+matrix(NA,nrow(coord),2)    #SAMPLE: FIlls NA for the nrow from the file and 2 columns.
 
 LETTERS
 letters
