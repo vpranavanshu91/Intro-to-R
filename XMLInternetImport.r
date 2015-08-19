@@ -1,4 +1,5 @@
 require(XML)                    #Loading XML package
+require(stringr)
 theURL<-"http://techbus.safaribooksonline.com/9780133578867/35-2013-12-05?percentage=&reader=pf"
 Hrs <-readHTMLTable(theURL, which = 1,header = FALSE,StringsAsFactors= FALSE)   #imported data in Hrs DF
 class(Hrs)  #checked class of DF
