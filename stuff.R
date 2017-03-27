@@ -99,8 +99,8 @@ prop.table(table())
 ftable(table())
 
 ## packages
-ISwR, MASS
-dplyr - arrange, filter
+##ISwR, MASS
+##dplyr - arrange, filter
 
 ## data
 data(package = "name") ## to list data available in a package
