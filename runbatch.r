@@ -5,3 +5,6 @@ git.exe pull
 git.exe add .
 git.exe commit -m "comments"
 git.exe push origin master
+
+
+#fnjb
