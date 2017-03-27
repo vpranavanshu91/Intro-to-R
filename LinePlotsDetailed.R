@@ -2,6 +2,7 @@ require(ggplot2)
 data("economics")
 head(economics)
 ggplot(economics,aes(x=date,y=pop)) + geom_line()
+#pranac
 
 install.packages("lubridate")
 require(lubridate)
