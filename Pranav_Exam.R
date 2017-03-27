@@ -1,10 +1,10 @@
-baseball = read.csv("C:/Users/vpran/Desktop/baseball.csv")
-attach(baseball) 
-
 #Q1
 
 # Bootstrapped confidence interval
+rm(list = ls())
 
+baseball = read.csv("C:/Users/vpran/Desktop/baseball.csv")
+attach(baseball) 
 
 f1 = function()
 {
@@ -18,9 +18,10 @@ sdist=replicate(10000,f1())
 plot(density(sdist),main = "sdist")
 polygon(density(sdist),col="green")
 quantile(sdist,probs = c(0.025,1-0.025))
-
+detach(baseball)
 
 #Q2
+rm(list = ls())
 AgeLessT60 <- c(75,77,80,69,73,76,78,74,75,81,75,80,79,80)
 AgeGreaterT60 <- c(68,74,77,71,73,75,80,77,78,72,69,71,75,78)
 
@@ -45,16 +46,23 @@ pvalue = length(sdist[sdist<mean(sdist)-gap|sdist>mean(sdist)+gap])/length(sdist
 pvalue 
 
 #Q3
-num <- c(-400,75,77,80,69,73,76,77,78,74,75,81,75,80,79,80,150,200,400,500,551)
+rm(list = ls())
+
+baseball = read.csv("C:/Users/vpran/Desktop/baseball.csv")
+attach(baseball)
+
 
 f1 = function(numvec)
 {
     return(length(numvec[numvec>(mean(numvec)+(2*sd(numvec)))|numvec<(mean(numvec)-(2*sd(numvec)))]))
 }
 
-f1(num)
+f1(Salary)
+
+detach(baseball)
 
 #Q4
+rm(list = ls())
 num2 <- c(5,10,NA)
 
 f1 = function(input)
@@ -63,4 +71,3 @@ f1 = function(input)
 }
 
 f1(num2)
-
