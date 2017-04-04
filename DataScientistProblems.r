@@ -18,10 +18,10 @@ library(lubridate)
 library(tseries)
 
 #Reading csvs from desktop
-ctrip04 <- read.csv("/201604-citibike-tripdata.csv")
-ctrip05 <- read.csv("/201605-citibike-tripdata.csv")
-ctrip06 <- read.csv("/201606-citibike-tripdata.csv")
-weather <- read.csv("/central_park_weather.csv")
+ctrip04 <- read.csv("C:/Users/vpran/Desktop/Jaggu DC/201604-citibike-tripdata.csv")
+ctrip05 <- read.csv("C:/Users/vpran/Desktop/Jaggu DC/201605-citibike-tripdata.csv")
+ctrip06 <- read.csv("C:/Users/vpran/Desktop/Jaggu DC/201606-citibike-tripdata.csv")
+weather <- read.csv("C:/Users/vpran/Desktop/Jaggu DC/central_park_weather.csv")
 
 #binding csvs into a single df and removing the rest
 ctrip <- rbind(ctrip04,ctrip05,ctrip06)
