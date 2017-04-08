@@ -5,7 +5,6 @@
 
 #loading libraries
 library(lmtest)
-library(rmarkdown)
 library(astsa)
 library(xts)
 library(mice)
@@ -208,8 +207,8 @@ arima_ac
 # Here after trying all the regressors the best would be kept and explained
 
 reg_rev <- Arima(obj_ts_rev, xreg=obj_ts_tmin,order = c(0,0,1),seasonal = list(order=c(0,1,0),period=5))
-ar_tc <- Arima(obj_ts_tc,order = c(0,1,0))
-reg1_for <- forecast(reg_rev,h=7,xreg=forecast(ar_tc,h=8)$mean)
+ar_tc <- Arima(obj_ts_tmin,order = c(0,1,0))
+reg1_for <- forecast(reg_rev,h=8,xreg=forecast(ar_tc,h=8)$mean)
 summary(reg1_for)
 plot.ts(reg1_for$x)
 points(reg1_for$fitted)
