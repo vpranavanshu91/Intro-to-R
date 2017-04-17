@@ -66,3 +66,7 @@ attach(women)
 
 View(Boston)
 plot(height,weight,type = 'l')
+
+reg2 = lm(medv~.,data=Boston)
+summary(reg2)
+ncvTest(reg2) #homoskedasticity test
