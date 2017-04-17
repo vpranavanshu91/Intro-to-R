@@ -1,6 +1,11 @@
-growth <- read.csv("C:/Users/vpran/Desktop/growth.csv")
 library(bbmle)
+library(car)
+
+growth <- read.csv("C:/Users/vpran/Desktop/growth.csv")
+
 attach(growth)
+
+plot(growth$age,growth$height)
 
 f1 = function(b0,b1,sig)
 {
@@ -19,3 +24,11 @@ summary(res)
 ##################################################################################
 
 wrkh <- read.csv("C:/Users/vpran/Desktop/Workinghours.csv")
+attach(wrkh)
+
+plot(income)
+
+reg <- lm(income~.-child5-child13-child17,data=wrkh)
+summary(reg)
+
+boxCox(reg,family = "yjPower", plotit = T)
