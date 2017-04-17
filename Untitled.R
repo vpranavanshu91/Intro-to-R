@@ -1,0 +1,2 @@
+kjasbdkjasb
+getwd()
