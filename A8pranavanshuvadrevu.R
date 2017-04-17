@@ -1,7 +1,9 @@
 library(bbmle)
 corn <- read.csv("C:/Users/vpran/OneDrive - University of Connecticut School of Business/MSBAPM/B13 - OPIM 5503 - Data Analytics using R/corn.csv")
 health <- read.csv("C:/Users/vpran/OneDrive - University of Connecticut School of Business/MSBAPM/B13 - OPIM 5503 - Data Analytics using R/health.csv")
-
+library(devtools)
+install_github(username = "vpranavanshu91",repo = "Intro-to-R")
+library(gscom)
 attach(corn)
 reg1 = lm(yield~nitrate)
 summary(reg1)
