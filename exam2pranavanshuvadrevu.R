@@ -32,3 +32,12 @@ reg <- lm(income~.-child5-child13-child17,data=wrkh)
 summary(reg)
 
 boxCox(reg,family = "yjPower", plotit = T)
+
+reg2 <- lm(log(income)~.-child5-child13-child17,data=wrkh)
+summary(reg2)
+
+z = cooks.distance(reg2)
+plot(reg2,which = 4, cook.levels = cutoff)
+abline(h = cutoff,col='red')
+cutoff = 4 / length(income)
+z[z>cutoff]
