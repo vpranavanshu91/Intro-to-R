@@ -80,7 +80,7 @@ z[z>cutoff]
 
 #Scenario 8: Multicollinearity 
 x1 = runif(500,1,10) 
-lambda = 0.7 
+lambda = 0.1 
 x2 = (lambda*x1) + (1-lambda)*runif(500,1,10) 
 cor(x1,x2) 
 y = 2*x1 + x2 + rnorm(500,0,10) 
@@ -149,6 +149,7 @@ y = 250 + x + rnorm(500,0,10)
 x[499] = 860 
 reg1 = lm(y~x)
 summary(reg1)
+
 z = cooks.distance(reg1)
 cutoff = 4/length(x)
 w = ifelse(z<cutoff,1,cutoff/z)
@@ -207,11 +208,13 @@ summary(reg2)
 x = runif(500,1,100) 
 y = 250 + x + rnorm(500,0,10)
 reg1 = lm(y~x)
+summary(reg1)
 boxTidwell(y~x)
 
 x = runif(500,1,20) 
 y = 100 + 2*x + 0.5*(x^2) + rnorm(500)
-reg1 = lm(y~x)
+reg2 = lm(y~x)
+summary(reg2)
 boxTidwell(y~x)
 ###########################################
 #We do not do ANOVA and AIC when Ys are different as in regular y and log(y), hence only r^2 should be seen
