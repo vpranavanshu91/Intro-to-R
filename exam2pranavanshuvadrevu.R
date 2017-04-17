@@ -41,3 +41,4 @@ plot(reg2,which = 4, cook.levels = cutoff)
 abline(h = cutoff,col='red')
 cutoff = 4 / length(income)
 z[z>cutoff]
+length(z[z>cutoff])
